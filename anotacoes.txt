@@ -1,0 +1,11 @@
+git init --aplica o controle do git em uma determinada pasta
+git branch
+git tag -- mostra quantas versoes tem o projeto
+git checkout -- muda de versao
+git ls-files -- mostra quais arquivos o git esta controlando
+git status - mostra o estado atual do repositorio
+git add [arquivo] - adiciona o arquivo no controle de versao do git
+git add -i [arquivo] - modo iterativo de adicionar o arquivo ou alteração no controle de versao
+git commit -m ["descricao da alteracao"] - grava as alterações no repositorio
+git config user.name ["nome"]
+git config user.email ["email"]
