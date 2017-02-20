@@ -1,10 +1,10 @@
-AULA 01-----
+AULA 01-----17-02-2017
 git init --aplica o controle do git em uma determinada pasta
 git branch
 git tag -- mostra quantas versoes tem o projeto
 git checkout -- muda de versao
 
-AULA 02------
+AULA 02------17-02-2017
 git ls-files -- mostra quais arquivos o git esta controlando
 git status - mostra o estado atual do repositorio
 git add [arquivo] - adiciona o arquivo no controle de versao do git
@@ -13,7 +13,7 @@ git commit -m ["descricao da alteracao"] - grava as alterações no repositorio
 git config user.name ["nome"]
 git config user.email ["email"]
 
-AULA 03-----
+AULA 03-----20-02-2017
 git remote - mostra qual o repositorio remoto esta usando
 git remote add [nomeRepositorioRemoto] [URL] - seta um repositorio remoto
 git push [nomeRepositorioRemoto] [nome da branch a ser criada ex.master] - grava os arquivos 
@@ -21,7 +21,13 @@ git log - mostra o log de commits
 git whatchanged - mostra o log de commits e os arquivos que foram alterados
 git whatchanged -p - mostra o log de commits, os arquivos que foram alterado e o conteudo alterado de cada arquivo
 
-AULA 04-----
+AULA 04-----20-02-2017
 git branch - mostra as branchs existentes
 git branch [nomeBranch]  - cria uma nova branch
+git branch -r - mostra as branchs remotas
 git checkout [nomeBranch] - muda de branch
+git push -u [nomeRepositorioRemoto] [nomeBranch] - gravando branch no repositorio remoto
+git pull - baixa as alteraçoes do ambiente remoto par ao ambiente local
+git branch -t [nomeDaBranchLocal] [nomeDaBranchRemota] - cria uma branch local apontando pra uma branch remota ja existentes
+
+AULA 05-----20-02-2017
