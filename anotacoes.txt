@@ -9,3 +9,6 @@ git add -i [arquivo] - modo iterativo de adicionar o arquivo ou alteração no c
 git commit -m ["descricao da alteracao"] - grava as alterações no repositorio
 git config user.name ["nome"]
 git config user.email ["email"]
+git remote - mostra qual o repositorio remoto esta usando
+git remote add [nomeRepositorioRemoto] [URL] - seta um repositorio remoto
+git push [nomeRepositorioRemoto] [nome da branch a ser criada ex.master] - grava os arquivos 
