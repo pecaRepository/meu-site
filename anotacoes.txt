@@ -1,33 +1,86 @@
-AULA 01-----17-02-2017
-git init --aplica o controle do git em uma determinada pasta
-git branch
-git tag -- mostra quantas versoes tem o projeto
-git checkout -- muda de versao
+URL: https://cursos.alura.com.br/course/git
 
-AULA 02------17-02-2017
+AULA 01 - introducao ao GIT - 17-02-2017
+git init | aplica o controle do git em uma determinada pasta
+git branch
+git tag | mostra quantas versoes tem o projeto
+git clone |
+git checkout | muda de versao
+
+AULA 02 - o ciclo basico do GIT - 17-02-2017
 git ls-files -- mostra quais arquivos o git esta controlando
-git status - mostra o estado atual do repositorio
-git add [arquivo] - adiciona o arquivo no controle de versao do git
-git add -i [arquivo] - modo iterativo de adicionar o arquivo ou alteração no controle de versao
-git commit -m ["descricao da alteracao"] - grava as alterações no repositorio
+git status | mostra o estado atual do repositorio
+git add [arquivo] | adiciona o arquivo no controle de versao do git
+git add -i [arquivo] | modo iterativo de adicionar o arquivo ou alteração no controle de versao
+git commit -m ["descricao da alteracao"] | grava as alterações no repositorio
 git config user.name ["nome"]
 git config user.email ["email"]
 
-AULA 03-----20-02-2017
-git remote - mostra qual o repositorio remoto esta usando
-git remote add [nomeRepositorioRemoto] [URL] - seta um repositorio remoto
-git push [nomeRepositorioRemoto] [nome da branch a ser criada ex.master] - grava os arquivos 
-git log - mostra o log de commits
-git whatchanged - mostra o log de commits e os arquivos que foram alterados
-git whatchanged -p - mostra o log de commits, os arquivos que foram alterado e o conteudo alterado de cada arquivo
+AULA 03 - sincronizacao dos dados com o repositorio - 20-02-2017
+git remote | mostra qual o repositorio remoto esta usando
+git remote add [nomeRepositorioRemoto] [URL] | seta um repositorio remoto
+git push [nomeRepositorioRemoto] [nome da branch a ser criada ex.master] | grava os arquivos 
+git log | mostra o log de commits
+git whatchanged | mostra o log de commits e os arquivos que foram alterados
+git whatchanged -p | mostra o log de commits, os arquivos que foram alterado e o conteudo alterado de cada arquivo
 
-AULA 04-----20-02-2017
-git branch - mostra as branchs existentes
-git branch [nomeBranch]  - cria uma nova branch
-git branch -r - mostra as branchs remotas
-git checkout [nomeBranch] - muda de branch
-git push -u [nomeRepositorioRemoto] [nomeBranch] - gravando branch no repositorio remoto
-git pull - baixa as alteraçoes do ambiente remoto par ao ambiente local
-git branch -t [nomeDaBranchLocal] [nomeDaBranchRemota] - cria uma branch local apontando pra uma branch remota ja existentes
+AULA 04 - organizacao do trabalho com branches - 20-02-2017
+git branch | mostra as branchs existentes
+git branch [nomeBranch]  | cria uma nova branch
+git branch -r | mostra as branchs remotas
+git branch -a | mostra as branchs remotas e locais
+git checkout [nomeBranch] | muda de branch
+git push -u [nomeRepositorioRemoto] [nomeBranch] | gravando branch no repositorio remoto
+git pull | baixa as alteraçoes do ambiente remoto par ao ambiente local
+git branch -t [nomeDaBranchLocal] [nomeDaBranchRemota] | cria uma branch local apontando pra uma branch remota ja existentes
+git checkout -b [nomeBranch] | cria uma branch e ja alterna para o ambiente criado
+git checkout -t [nomeRepositorioRemoto]/[nomeBranch] | cria uma branche local e remota e a referencia entre elas
+git push -d [nomeRepositorioRemoto] [nomeBranch] | deleta uma branch
+git fetch [nomeRepositorioRemoto] | verifica as atualizacoes feitas no repositorio
 
-AULA 05-----20-02-2017
+AULA 05 - Resolução de conflitos - 16-03-2017
+quando 2 usuario trabalham no mesmo arquivo, no momento em que o usuairo faz o push, o git rejeita, e avisa que existe alteraçoes no repositorio remoto.
+entao é feito um git pull para baixar as alteraçoes do repositorio remoto, e por se tratar do mesmo arquivo, o git faz um merge automatico, porem se a alteração for nas mesmas linhas, o git ira alertar conflito e ira alterar o arquivo, entao o usuario tem que fazer a correção do conflito manualmente e depois fazer o git add e commit, resolvendo assim o conflito para depois poder fazer o push pro repositorio remoto.
+
+AULA 06 - Boas praticas no uso do GIT - 16-03-2017
+git merge [nomeBranch] | baixa as alteraçoes de uma branch para o repositorio local
+git rebase [branchBase] [branchAAtualizar] | atualiza uma branch com base em outra
+git rebase --continue | continua a atualização após a correção de algum conflito de merge
+git rebase --abort | aborta o reabse e volta ao estado original
+git rebase --skip | faz com que suas alteraçoes sejam descartadas
+
+AULA 07 - Controle avançado de alteraçoes - 20-03-2017
+git reset HEAD [arquivo] | volta o pro estado anterior do arquivo(caso tenha feito um git add, ele volta para o status para inserir)
+HEAD~[numer] | referencia o commit da numeração passada  onde 1 é o ultimo (forma de referenciar commits sem usar o hash de cada commit)
+git reset [identificadorDoComit] | reverte o codigo para algum comit, depende de qual identificador eu passe
+git revert [identificadorDoComit] | reverte apenas as alterações feita no commit passado
+git checkout [nomeArquivo] | volta pro estado original do arquivo(desfazer alteração antes de fazer um git add)
+git stash | guarda as alteraçoes que nao foram comitadas em um local temporario
+git stash list | mostra as alteraçoes que estao armazenadas dentro deste local temporario
+git stash pop | recupera a ultima alteração gravada no stash
+git stash apply [nomeStash] | recupera uma alteração especifica do stash
+git stash drop | remove as alteraçoes dentro do stash
+git bisect start | inicia um mecanismo de consulta do git com base no historico de commit
+git bisect bad [identificadorCommit] | diz ao bisect que essa versao é ruim
+git bisect good [identificadoCommit] | diz ao bisect  que essa versao é boa
+git checkout -- [nomeArquivo] | deixamos claro para o git que queremos reverter o arquivo e nao mudar de branch(caso o nome do arquivo seja igual ao nome da branch)
+git reset --hard |
+git reset --soft |
+git reset |
+
+AULA 08 - Contribuição com o openSource, técnicas avançadas e produtividade com o GIT - 24-03-2017
+
+AULA 09 - Fazendo merges avançados com Cherry Pick - 27-03-2017
+git cherry-pick [hashDoCommit] | sobe pra master um comit especifico de qualquer branch para a master
+git cherry-pick -n [hashDoCommit]| permite que recuperemos as alterações de um dado commit sem precisar inseri-lo no histórico local.
+git cherry-pick --no-commit | permite que recuperemos as alterações de um dado commit sem precisar inseri-lo no histórico local.
+git cherry-picl --help | abre um arquivo com todas as instruções de uso do comando
+git help gitrevisions | abre um arquivo com as instruções de versoes
+git cherry-pick [hashComitInicial]..[hashComitFinal] | sobe para o master um range de commits
+/*sobre o cherry-pick
+	Alguns dos casos mais comuns de uso do git cherry-pick são situações em que um pull request ou a mescla de uma branch será recusada, mas há commits com código aproveitável e necessário. Estes commits precisam ser isolados e importados pra dentro da sua branch atual, com o cuidado de não incluir o restante do código que será descartado.
+*/
+
+
+AULA 10 - Usando GIT atraves de interfaces visuais - 27-03-2017
+usando git cola | interfaces grafica para o git.
